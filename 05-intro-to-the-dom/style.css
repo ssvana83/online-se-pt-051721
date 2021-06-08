@@ -1,5 +1,5 @@
 * {
-  border: dotted grey 1px;
+  /* border: dotted black 2px; */
   padding: 1em;
 }
 
@@ -16,5 +16,5 @@ h1 {
 }
 
 .img-container {
-  border: dashed green 2px;
+  /* border: dashed green 2px; */
 }
