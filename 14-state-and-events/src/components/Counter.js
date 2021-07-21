@@ -1,7 +1,15 @@
 export default function Counter(props) {
 
   return (
-    <p onClick={handleClick}>You have clicked 0 times! Click me to add 1!</p>
+    <>
+
+      <p>You have clicked 0 times!</p>
+
+      <button>Click to add 1!</button>
+
+      <br/>
+
+    </>
   )
 
 }

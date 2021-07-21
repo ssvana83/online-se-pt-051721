@@ -1,14 +1,14 @@
-import MyButton from './components/MyButton'
 import Counter from './components/Counter'
+import LockButton from './components/LockButton'
 
 function App() {
 
   return (
     <div className="App">
 
-      <MyButton/>
-
       <Counter />
+
+      <LockButton/>
 
     </div>
   );
