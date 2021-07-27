@@ -3,12 +3,14 @@ function NoteForm(props) {
   return (
     <form id="note-form">
 
-      <label>Add A New Note!</label>
       <input
         type="text"
+        placeholder="Add a note here!"
       />
 
-      <label>When should we complete this chore?</label>
+      <br/>
+
+      <label>when should we complete this?</label>
       <input
         type="date"
       />

@@ -8,8 +8,6 @@ function NotesContainer(props) {
 
       <NoteForm />
 
-      <br/>
-
       <Note />
       <Note />
       <Note />
