@@ -2,6 +2,7 @@
   --note-pink: #FF7EB9;
   --note-yellow: #FEFF9C;
   --note-blue: #7AFCFF;
+  --perm-marker: 'Permanent Marker', cursive;
 }
 
 body {
@@ -9,7 +10,7 @@ body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-family: 'Permanent Marker', cursive;
+  font-family: var(--perm-marker);
   text-align: center;
 }
 
@@ -46,4 +47,12 @@ form * {
 
 input[type=text] {
   width: 90%;
+}
+
+button {
+  background-color: var(--note-blue);
+  border: solid black 3px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: var(--perm-marker);
 }
