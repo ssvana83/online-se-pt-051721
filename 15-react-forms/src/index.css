@@ -50,7 +50,7 @@ input[type=text] {
 }
 
 button {
-  background-color: var(--note-blue);
+  background: none;
   border: solid black 3px;
   border-radius: 5px;
   cursor: pointer;
