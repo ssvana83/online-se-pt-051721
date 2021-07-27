@@ -3,11 +3,11 @@ function Note(props) {
   return (
     <div className="note">
 
-      <p>Our Note Goes Here!</p>
+      <p>{props.note.text}</p>
 
-      <p>Complete by XX-XX-XXXX</p>
+      <p>Complete by {props.note.date}</p>
 
-      <button>Remove</button>
+      <button onClick={() => props.removeNote(props.note)}>Remove</button>
 
     </div>
   )
