@@ -35,6 +35,13 @@ h1 {
   background-color: var(--note-pink);
   border: dotted black 1px;
   margin: 1em;
+  position: relative;
+}
+
+.note .note-id {
+  position: absolute;
+  top: -1em;
+  left: 0;
 }
 
 form {

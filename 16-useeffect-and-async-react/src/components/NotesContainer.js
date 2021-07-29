@@ -7,18 +7,18 @@ function NotesContainer(props) {
   const [notes, setNotes] = useState([
     {
       id: 1,
-      text: "Do laundry",
-      date: "tomorrow"
+      text: "Do laundry, fold clothes",
+      date: "maybe tomorrow?"
     },
     {
       id: 2,
       text: "Sleeeeeeep",
-      date: "monday"
+      date: "never lol"
     },
     {
       id: 3,
-      text: "Fooooooood",
-      date: "7-30-2021"
+      text: "Cook family dinner",
+      date: "2021-7-30"
     }
   ])
 
