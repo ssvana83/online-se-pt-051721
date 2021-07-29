@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import React, { useState } from 'react'
 import NoteForm from "./NoteForm"
 import Note from './Note'
 

@@ -1,3 +1,4 @@
+import React from 'react'
 import NotesContainer from './components/NotesContainer'
 
 function App() {
