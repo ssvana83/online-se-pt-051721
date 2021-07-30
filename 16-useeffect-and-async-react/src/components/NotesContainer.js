@@ -1,39 +1,45 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import NoteForm from "./NoteForm"
 import Note from './Note'
 
 function NotesContainer(props) {
 
-  const [notes, setNotes] = useState([
-    {
-      id: 1,
-      text: "Do laundry, fold clothes",
-      date: "maybe tomorrow?"
-    },
-    {
-      id: 2,
-      text: "Sleeeeeeep",
-      date: "never lol"
-    },
-    {
-      id: 3,
-      text: "Cook family dinner",
-      date: "2021-7-30"
-    }
-  ])
+  const [notes, setNotes] = useState([])
+
+  useEffect(function() {
+    fetch('http://localhost:3001/notes')
+    .then(res => res.json())
+    .then(data => setNotes(data))
+  }, [])
 
   function renderNotes() {
-    return notes.map((note, i) => <Note key={i} note={note} removeNote={removeNote} />)
+    return notes.map((note, i) => <Note key={note.id} note={note} orderNumber={i} removeNote={removeNote} />)
   }
 
   function addNote(newNote) {
-    const newArray = [...notes, newNote]
-    setNotes(newArray)
+    fetch(`http://localhost:3001/notes`, {
+      method: 'POST',
+      headers: {
+        'Accepts': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(newNote)
+    })
+    .then(res => res.json())
+    .then(noteWithID => {
+      const newArray = [...notes, noteWithID]
+      setNotes(newArray)
+    })
+
   }
 
   function removeNote(noteToRemove) {
     const filteredArray = notes.filter(note => note !== noteToRemove)
     setNotes(filteredArray)
+
+    fetch(`http://localhost:3001/notes/${noteToRemove.id}`, {
+      method: 'DELETE'
+    })
   }
 
   return (

@@ -1,9 +1,13 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 
 function NoteForm({addNote}) {
 
   const [textInput, setTextInput] = useState('')
   const [dateInput, setDateInput] = useState('')
+
+  // useEffect(function() {
+  //   alert("Firing!")
+  // }, [textInput])
 
   function handleChangeText(event) {
     setTextInput(event.target.value.replace(/the/, ''))

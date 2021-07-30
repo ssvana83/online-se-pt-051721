@@ -1,19 +1,29 @@
 {
   "notes": [
     {
-      "id": 1,
-      "text": "Do laundry, fold clothes",
-      "date": "maybe tomorrow?"
-    },
-    {
       "id": 2,
       "text": "Sleeeeeeep",
       "date": "never lol"
     },
     {
-      "id": 3,
-      "text": "Cook family dinner",
-      "date": "2021-7-30"
+      "text": "Love and cherish React",
+      "date": "2021-07-30",
+      "id": 4
+    },
+    {
+      "text": "Create React Bible",
+      "date": "2021-08-02",
+      "id": 5
+    },
+    {
+      "text": "Eat a cheescake",
+      "date": "2021-07-30",
+      "id": 6
+    },
+    {
+      "text": "check cheesecake for substances???",
+      "date": "2021-07-31",
+      "id": 7
     }
   ]
 }

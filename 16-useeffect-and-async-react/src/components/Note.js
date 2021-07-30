@@ -1,11 +1,20 @@
-import React from 'react'
+import React,  { useEffect } from 'react'
 
 function Note(props) {
+
+  //useEffect(function() {
+    // primary effect
+    // alert("Subscribe to a chat room")
+
+    // cleanup function
+    // return () => alert("Unsubscribe from chat room")
+
+  //}, /* dependency array */ [])
 
   return (
     <div className="note">
 
-      <p class="note-id">#{props.note.id}</p>
+      <p className="note-id">#{props.orderNumber + 1}</p>
 
       <p>{props.note.text}</p>
 
