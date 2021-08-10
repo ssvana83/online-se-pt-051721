@@ -1,0 +1,49 @@
+{
+  "cats": [
+    {
+      "name":"Octavia",
+      "favFood": "Tuna all day every day",
+      "id": 1
+    },
+    {
+      "name":"Garfield",
+      "favFood": "Lasagna",
+      "id": 2
+    },
+    {
+      "name":"Ursula",
+      "favFood": "I just want love and attention",
+      "id": 3
+    },
+    {
+      "name":"Cheshire Cat",
+      "favFood": "Tea and riddles",
+      "id": 4
+    },
+    {
+      "name":"Tom",
+      "favFood": "Jerry",
+      "id": 5
+    },
+    {
+      "name":"Mr. Bigglesworth",
+      "favFood": "One million dollars",
+      "id": 6
+    },
+    {
+      "name":"Salem",
+      "favFood": "Evil",
+      "id": 7
+    },
+    {
+      "name":"Unsinkable Sam",
+      "favFood": "Anything really",
+      "id": 8
+    },
+    {
+      "name":"Stubbs, Mayor of Talkeetna",
+      "favFood": "The very best",
+      "id": 9
+    }
+  ]
+}
