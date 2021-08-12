@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from 'react'
 import './App.css';
 import Litterbox from "./components/Litterbox"
+import LitterboxStatus from "./components/LitterboxStatus"
 import Foodbowl from "./components/Foodbowl"
 import Clean from "./components/Clean"
 import Cat from "./components/Cat"
 import Navbar from "./components/Navbar"
+import Catalogue from "./components/Catalogue"
+import FourOhFour from "./components/404"
 import {
   BrowserRouter as Router,
   Switch,
@@ -46,12 +49,20 @@ function App() {
             <Litterbox />
           </Route>
 
-          <Route path="/litterbox/clean">
-            <Clean />
+          <Route exact path="/litterbox/:status">
+            <LitterboxStatus />
           </Route>
 
           <Route path="/foodbowl">
             <Foodbowl />
+          </Route>
+
+          <Route path="/catalogue">
+            <Catalogue cats={cats} />
+          </Route>
+
+          <Route path="*">
+            <FourOhFour />
           </Route>
 
         </Switch>

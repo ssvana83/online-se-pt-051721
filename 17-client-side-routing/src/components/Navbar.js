@@ -1,15 +1,12 @@
 import React from 'react'
-import Cat from './Cat'
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
-function Navbar({cats}) {
+function Navbar() {
 
   return (
     <div id="navbar">
 
-      <Link to="/litterbox">Litterbox</Link> | <Link to="/foodbowl">Foodbowl</Link>
-
-      {cats.map(cat => <Link to={`/cats/${cat.id}`}>{cat.name}</Link>)}
+      <NavLink exact to="/" activeStyle={{color: 'red'}} >Home</NavLink> | <NavLink to="/litterbox" activeClassName="selected-link">Litterbox</NavLink> | <NavLink to="/foodbowl" activeClassName="selected-link">Foodbowl</NavLink> | <NavLink to="/catalogue" activeClassName="selected-link">CATalogue</NavLink>
 
     </div>
   )
