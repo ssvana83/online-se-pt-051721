@@ -1,0 +1,14 @@
+{
+  "raccoons": [
+    {
+      "id": 1,
+      "name": "Sticky Butt",
+      "image": "http://images.dailyhive.com/20180830065854/Screen-Shot-2018-08-30-at-9.45.46-AM.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Groofus",
+      "image": "https://i.pinimg.com/originals/a8/3b/05/a83b05acc9113a3f1393b07e032bda02.jpg"
+    }
+  ]
+}
