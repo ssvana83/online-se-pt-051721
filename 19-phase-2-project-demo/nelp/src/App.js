@@ -9,16 +9,13 @@ import ReviewsList from './components/ReviewsList'
 import Review from './components/Review'
 import NewReviewForm from './components/NewReviewForm'
 import Navbar from './components/Navbar'
+import useFetchedState from './hooks/useFetchedState'
 
 function App() {
 
-  const [reviews, setReviews] = useState([])
+  const [reviews, setReviews] = useFetchedState([],'http://localhost:3000/reviews')
 
-  useEffect(() => {
-    fetch('http://localhost:3000/reviews')
-    .then(res => res.json())
-    .then(data => setReviews(data))
-  }, [])
+  console.log(reviews)
 
   return (
     <div className="App">
