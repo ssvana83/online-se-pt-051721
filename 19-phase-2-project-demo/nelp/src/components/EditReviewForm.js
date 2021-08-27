@@ -1,17 +1,23 @@
 import React, { useState } from 'react'
+import { useParams } from 'react-router-dom'
 
+function EditReviewForm({reviews, editReview}) {
 
-function NewReviewForm({addReview}) {
+  const params = useParams()
+
+  console.log(params)
+
+  const foundReview = reviews.find(review => review.id === parseInt(params.id))
 
   const [formData, setFormData] = useState({
-    restaurant: '',
-    content: '',
-    rating: 0
+    restaurant: foundReview.restaurant,
+    content: foundReview.content,
+    rating: foundReview.rating,
   })
 
   function handleSubmit(event) {
     event.preventDefault()
-    addReview(formData)
+    editReview({ ...formData, id: foundReview.id })
   }
 
   return (
@@ -44,11 +50,11 @@ function NewReviewForm({addReview}) {
 
       <br/>
 
-      <input type="submit" value="Add A New Review" />
+      <input type="submit" value="Edit This Review!" />
 
     </form>
   )
 
 }
 
-export default NewReviewForm
+export default EditReviewForm

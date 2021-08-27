@@ -8,11 +8,17 @@ import {
 import ReviewsList from './components/ReviewsList'
 import Review from './components/Review'
 import NewReviewForm from './components/NewReviewForm'
+import EditReviewForm from './components/EditReviewForm'
 import Navbar from './components/Navbar'
+import { useHistory } from 'react-router-dom'
+
+const headers = {'Content-Type': 'application/json', 'Accepts': 'application/json'}
 
 function App() {
 
   const [reviews, setReviews] = useState([])
+
+  const history = useHistory()
 
   useEffect(() => {
     fetch('http://localhost:3000/reviews')
@@ -20,32 +26,61 @@ function App() {
     .then(data => setReviews(data))
   }, [])
 
+  function addReview(newReview) {
+    fetch('http://localhost:3000/reviews', {
+      method: 'POST',
+      headers,
+      body: JSON.stringify(newReview)
+    })
+    .then(res => res.json())
+    .then(data => {
+      setReviews([...reviews, data])
+      history.push('/')
+    })
+  }
+
+  function editReview(editedReview) {
+    console.log(editedReview);
+    fetch(`http://localhost:3000/reviews/${editedReview.id}`, {
+      method: 'PATCH',
+      headers,
+      body: JSON.stringify(editedReview)
+    })
+    .then(res => res.json())
+    .then(data => {
+      console.log(data)
+      setReviews(reviews.map(review => data.id === review.id ? data : review))
+      history.push('/')
+    })
+  }
+
   return (
     <div className="App">
 
-    <h1>Nelp</h1>
-    <h3>We keep the mystery alive?</h3>
+      <h1>Nelp</h1>
+      <h3>We keep the mystery alive?</h3>
 
-      <Router>
+      <Navbar />
 
-        <Navbar />
+      <Switch>
 
-        <Switch>
+        <Route exact path="/">
+          <ReviewsList reviews={reviews} />
+        </Route>
 
-          <Route exact path="/">
-            <ReviewsList reviews={reviews} />
-          </Route>
+        <Route exact path="/reviews/new">
+          <NewReviewForm addReview={addReview} />
+        </Route>
 
-          <Route exact path="/reviews/new">
-            <NewReviewForm />
-          </Route>
+        <Route exact path="/reviews/:id">
+          <Review reviews={reviews} />
+        </Route>
 
-          <Route exact path="/reviews/:id">
-            <Review reviews={reviews} />
-          </Route>
+        <Route exact path="/reviews/:id/edit">
+          <EditReviewForm reviews={reviews} editReview={editReview} />
+        </Route>
 
-        </Switch>
-      </Router>
+      </Switch>
 
     </div>
   );

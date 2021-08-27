@@ -1,11 +1,10 @@
 import React from 'react'
-import { useParams, Redirect } from 'react-router-dom'
+import { useParams, Redirect, useHistory } from 'react-router-dom'
 
 function Review({reviews}) {
 
   const params = useParams()
-
-  console.log(params)
+  const history = useHistory()
 
   const foundReview = reviews.find(review => review.id === parseInt(params.id))
 
@@ -16,6 +15,8 @@ function Review({reviews}) {
         <h3>{foundReview.restaurant}</h3>
         <p>{foundReview.rating} stars</p>
         <p>{foundReview.content}</p>
+
+        <button onClick={() => history.push(`/reviews/${foundReview.id}/edit`)}>Edit</button>
 
       </div>
     )
