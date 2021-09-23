@@ -1,6 +1,7 @@
 #!/usr/bin/env ruby
 
 require "pry"
+require_relative "../utilities.rb"
 require_relative "../animal.rb"
 require_relative "../cat.rb"
 require_relative "../dog.rb"
@@ -10,15 +11,6 @@ a2 = Animal.new("Ms Piggy", "Pig")
 a3 = Animal.new("Animal", "Red")
 a4 = Animal.new("Gonzo", "Blue")
 
-c1 = Cat.new("Ursula", "shorthair")
-
-d1 = Dog.new("Clifford", "big red dog")
-
-def clear
-  system("clear")
-end
-
-# clear
 puts "*****Welcome to the console!*****"
 
 
