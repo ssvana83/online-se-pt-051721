@@ -2,14 +2,27 @@
 
 require "pry"
 require_relative "../utilities.rb"
+require_relative "../walkable.rb"
 require_relative "../animal.rb"
 require_relative "../cat.rb"
+require_relative "../raccoon.rb"
+require_relative "../llama.rb"
 require_relative "../dog.rb"
+require_relative "../plant.rb"
 
 a1 = Animal.new("Kermit", "Frog")
 a2 = Animal.new("Ms Piggy", "Pig")
 a3 = Animal.new("Animal", "Red")
 a4 = Animal.new("Gonzo", "Blue")
+
+r1 = Raccoon.new("Trashcan", "ringtailed")
+r2 = Raccoon.new("Trashpanda", "red panda")
+
+l1 = Llama.new("Emperor Kuzko", "spoiled", true)
+
+d1 = Dog.new("Rex", "German Shepherd")
+d2 = Dog.new("Zelda", "German Shepherd")
+
 
 puts "*****Welcome to the console!*****"
 

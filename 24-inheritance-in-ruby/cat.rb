@@ -1,3 +1,5 @@
-class Cat
+class Cat < Animal
+
+  include Walkable
 
 end
