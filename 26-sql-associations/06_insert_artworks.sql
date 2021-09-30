@@ -1,0 +1,10 @@
+INSERT INTO artworks(name) VALUES ("Mona Lisa");
+INSERT INTO artworks(name) VALUES ("Starry Night");
+INSERT INTO artworks(name) VALUES ("Girl with a Pearl Earring");
+INSERT INTO artworks(name) VALUES ("The Last Supper");
+INSERT INTO artworks(name) VALUES ("The Birth of Venus");
+INSERT INTO artworks(name) VALUES ("Guernica");
+INSERT INTO artworks(name) VALUES ("American Gothic");
+INSERT INTO artworks(name) VALUES ("The Great Wave off Kanagawa");
+INSERT INTO artworks(name) VALUES ("The Son of Man");
+INSERT INTO artworks(name) VALUES ("The Garden of Earthly Delights");
